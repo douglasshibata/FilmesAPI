@@ -52,7 +52,11 @@ namespace FilmesAPI.Controllers
             {
                 return NotFound();
             }
-
+            filme.Titulo = filmeNovo.Titulo;
+            filme.Genero = filmeNovo.Genero;
+            filme.Duracao = filmeNovo.Duracao;
+            filme.Diretor = filmeNovo.Diretor;
+            _context.SaveChanges();
 
             return NoContent();
 
