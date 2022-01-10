@@ -9,10 +9,10 @@ namespace FilmesAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FilmeController:ControllerBase
+    public class FilmeController : ControllerBase
     {
         private static List<Filme> filmes = new List<Filme>();
-        private static int id =1;
+        private static int id = 1;
 
         [HttpPost]
         public void adicionarFilme([FromBody] Filme filme)
@@ -26,6 +26,12 @@ namespace FilmesAPI.Controllers
         public IEnumerable<Filme> getFilmes()
         {
             return filmes;
+        }
+
+        [HttpGet("{id}")]
+        public Filme GetFilmeById(int id)
+        {
+            return filmes.FirstOrDefault(filmes => filmes.Id == id);
         }
     }
 }
