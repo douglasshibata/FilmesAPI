@@ -11,3 +11,21 @@ donet new webapi
 ```bash
 dotnet watch run
 ```
+
+### Para instalar os pacotes
+Instalando os pacotes necessários para a conexão com o banco de dados
+
+```bash
+dotnet add package Microsoft.EntityFrameworkCore --version 5.0.5
+```
+
+```bash
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 5.0.5
+```
+
+MySQL
+```bash
+dotnet add package MySql.Data.EntityFrameworkCore --version 5.0.3
+```
+
+
