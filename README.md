@@ -35,6 +35,7 @@ docker run --name filmes-api -p 3306:3306 -e MYSQL_USER=root -e MYSQL_PASSWORD=r
 
 
 ### Migrações no banco
+Abra o console de gerenciamento de pacotes, no visual studio está localizado em ferramentas -> gerenciador de pacotes nuget
 Para adicionar uma migration
 ```bash
 Add-Migration CriandoTabelaFilme
@@ -43,4 +44,20 @@ Add-Migration CriandoTabelaFilme
 Para atualizar o banco de dados
 ```bash
 Update-Database
+```
+
+#### No linux
+Execute o comando para instalar o dotnet ef tools:
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Execute o comando de criação de migration:
+```bash
+dotnet ef migrations add FilmeMigration
+```
+
+Aplique as mudanças no banco de dados:
+```bash
+dotnet ef database update
 ```
