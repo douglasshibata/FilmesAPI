@@ -32,3 +32,15 @@ dotnet add package MySql.Data.EntityFrameworkCore --version 5.0.3
 ```bash
 docker run --name filmes-api -p 3306:3306 -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=filmeDb -d mariadb:10.5
 ```
+
+
+### Migrações no banco
+Para adicionar uma migration
+```bash
+Add-Migration CriandoTabelaFilme
+```
+
+Para atualizar o banco de dados
+```bash
+Update-Database
+```
